@@ -24,7 +24,6 @@ class MapGenerator:
         self.map_level = map_level
         self.set_noise_octave(self.octave)
 
-
     def set_map_level(self, map_level: float):
         if -0.2 <= map_level <= 0.2:
             self.map_level = map_level

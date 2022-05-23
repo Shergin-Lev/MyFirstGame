@@ -1,15 +1,14 @@
 import pygame
-import pygame as pg
 from config import *
 
 from map_generator import MapGenerator
 
-pg.init()
-display = pg.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
-screen = pg.Surface((DISPLAY_WIDTH / DISPLAY_SCALE, DISPLAY_HEIGHT / DISPLAY_SCALE))
-pg.display.set_caption(' -=- My First Game -=- ')
+pygame.init()
+display = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
+screen = pygame.Surface((DISPLAY_WIDTH / DISPLAY_SCALE, DISPLAY_HEIGHT / DISPLAY_SCALE))
+pygame.display.set_caption(' -=- My First Game -=- ')
 
-font = pg.font.Font(FONT_FILE, 40)
+font = pygame.font.Font(FONT_FILE, 40)
 
 game = True
 text1 = '#'
@@ -28,10 +27,10 @@ screen = map.set_tilesmap()
 move = True
 
 while game:
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
             game = False
-            pg.quit()
+            pygame.quit()
             quit()
 
     if move:
@@ -83,9 +82,9 @@ while game:
     screen.blit(text1_font, (0, 0))
     screen.blit(text2_font, (0, 10))
     screen.blit(text3_font, (0, 20))
-    display.blit(pg.transform.scale(screen, display.get_rect().size), (0, 0))
+    display.blit(pygame.transform.scale(screen, display.get_rect().size), (0, 0))
 
-    pg.display.update()
+    pygame.display.update()
 
 
 
